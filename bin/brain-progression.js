@@ -2,32 +2,32 @@
 
 import { playGame, getRandomNumber } from '../src/utils.js';
 
-const newRules = 'What number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 
-const generateNewProgression = (randomFirstNum, minLength, step) => {
-  const resultNewProgression = [];
+const generateProgression = (randomFirstNum, minLength, step) => {
+  const resultProgression = [];
   for (let i = randomFirstNum; i < minLength; i += step) {
-    if (resultNewProgression.length !== 10) resultNewProgression.push(i);
+    if (resultProgression.length !== 10) resultProgression.push(i);
   }
-  return resultNewProgression;
+  return resultProgression;
 };
 
-const generateNewRound = () => {
+const generateRound = () => {
   const randomFirstNum = getRandomNumber(1, 10);
   const step = getRandomNumber(1, 5);
   const minLength = randomFirstNum + (step * 10);
 
-  const newProgression = generateNewProgression(randomFirstNum, minLength, step);
-  const hiddenIndex = getRandomNumber(0, newProgression.length - 1);
-  const correctNewAnswer = newProgression[hiddenIndex].toString();
-  newProgression[hiddenIndex] = '..';
-  const question = newProgression.join(' ');
+  const progression = generateProgression(randomFirstNum, minLength, step);
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const correctAnswer = progression[hiddenIndex].toString();
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
 
-  return [question, correctNewAnswer];
+  return [question, correctAnswer];
 };
 
-const startBrainNewProgression = () => {
-  playGame(newRules, generateNewRound);
+const startBrainProgression = () => {
+  playGame(rules, generateRound);
 };
 
-startBrainNewProgression();
+startBrainProgression();
