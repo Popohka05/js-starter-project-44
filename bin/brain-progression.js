@@ -29,5 +29,5 @@ const generateRound = () => {
 const startBrainProgression = () => {
   playGame(rules, generateRound);
 };
-
+// eslint-disable-next-line eol-last
 startBrainProgression();

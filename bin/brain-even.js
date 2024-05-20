@@ -14,5 +14,5 @@ const generateRound = () => {
 const startBrainEven = () => {
   playGame(rules, generateRound);
 };
-
+// eslint-disable-next-line eol-last
 startBrainEven();

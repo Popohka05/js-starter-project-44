@@ -21,5 +21,5 @@ const generateRound = () => {
 const startBrainGCD = () => {
   playGame(rules, generateRound);
 };
-
+// eslint-disable-next-line eol-last
 startBrainGCD();

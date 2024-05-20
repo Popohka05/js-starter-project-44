@@ -21,5 +21,5 @@ const generateRound = () => {
 const startBrainPrime = () => {
   playGame(rules, generateRound);
 };
-
+// eslint-disable-next-line eol-last
 startBrainPrime();
